@@ -5,7 +5,7 @@ This repo is intended to be an icremental approach to studying the capacities of
 
 I came across this vignette from Tilde which discusses a couple of intresting findings by Merrill et al. demonstrating that a limited transformer can solve the Majority problem, which is outside the circuit class `AC^0` but inside `TC^0`.
 
-In this repo we aim to verify that emperically and aswer the follwing question posed by the vignette:  **"In other words, given a function that a transformer is capable of representing, can practical training setups (objective, optimizer, data, precision/compute) reliably recover it?"**
+In this repo we aim to verify that emperically and aswer the follwing question posed by the vignette:  **"Given a function that a transformer is capable of representing, can practical training setups (objective, optimizer, data, precision/compute) reliably recover it?"**
 
 ### Our Limited Transformer Config:
 - `1 head`, `1 Layer`, `embedding size = 1`
