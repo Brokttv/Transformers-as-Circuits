@@ -48,7 +48,7 @@ Fig 3 illustrating both `4)` and `5)` claims:
 ### Discussion:
 
 **Striking observations**: 
-- A non-saturated transformer always converges to a token-clustering solution
-- Saturated training finds multiple different solutions: some clustering strongly, some near-uniform, some inverted, some learning nothing. The mechanism isn't consistent
-- Transformers are sensitive to even-even train and test sequence lengths. It reovers a soltuion to Majority ~ as reliably as when trained on odd-odd pairs but only for smaller test sequence lengths. It also matters that even-even softmax fails while saturated can sometimes rescue it 
-- The gap between softmax and saturated inference accuracy reveals that some learned weight configurations are only viable under one attention regime, suggesting the two regimes impose different constraints on what solutions are reachable.
+- A non-saturated transformer always converges to a **token-clustering solution**
+- **Saturated training finds multiple different solutions**: some clustering strongly, some near-uniform, some inverted, some learning nothing. The mechanism isn't consistent
+- Transformers are sensitive to even-even train and test sequence lengths. It recovers a soltuion to Majority ~ as reliably as when trained on odd-odd pairs but only for smaller test sequence lengths. It also matters that even-even softmax fails **while saturated can sometimes rescue it** 
+- **The gap between softmax and saturated inference accuracy** reveals that some learned weight configurations are only viable under one attention regime, suggesting the two regimes impose different constraints on what solutions are reachable.
