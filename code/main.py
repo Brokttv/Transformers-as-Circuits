@@ -2,6 +2,7 @@ import argparse
 import torch
 import numpy as np
 import random
+from tqdm import tqdm
 
 from data import get_dataloaders
 from model import Restricted_Transformer
@@ -70,7 +71,7 @@ def main():
     
     results = {}
 
-    for seed in range(10):  
+    for seed in tqdm(range(10),desc = "should take a minute :)"):  
         set_model_seed(seed)
         print(f"Seed {seed} ────────────────────────────────────────")
 
