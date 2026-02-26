@@ -30,11 +30,10 @@ class Attention(nn.Module):
 
       if self.saturated:
         att_weight = self.saturated_attention(att_logits)
-
+        
       else:
 
         att_weight =  F.softmax(att_logits,dim=-1)
-
       att_output = att_weight @ v
 
       return att_output, att_weight
@@ -44,7 +43,6 @@ class Attention(nn.Module):
       query = self.q(x)  # (batch,q_len, emb_size)
       key = self.k(x)   # (batch,k_len, emb_size)
       value = self.v(x) # (batch,k_len, emb_size)
-
       att_output, att_weight = self.attention(query,key,value)
 
       return att_output,att_weight
@@ -57,8 +55,6 @@ class Classification_head(nn.Module):
 
   def forward(self,x):
     return self.out_layer(x)
-
-
 
 class Transformer(nn.Module):
   def __init__(self,emb_size,vocab_size,num_classes =1):
