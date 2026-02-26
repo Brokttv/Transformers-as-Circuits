@@ -56,7 +56,7 @@ class Classification_head(nn.Module):
   def forward(self,x):
     return self.out_layer(x)
 
-class Transformer(nn.Module):
+class Restricted_Transformer(nn.Module):
   def __init__(self,emb_size,vocab_size,num_classes =1):
     super().__init__()
 
