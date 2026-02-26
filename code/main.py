@@ -105,6 +105,8 @@ def main():
         print(f"  softmax    : {acc_soft:5.2f}%")
         print(f"  saturated  : {acc_hard:5.2f}%\n")
 
+    print(results)
+
 
 if __name__ == "__main__":
     main()
