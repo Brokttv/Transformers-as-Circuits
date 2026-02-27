@@ -42,7 +42,7 @@ python main.py --task or --epochs 30 --batch-size 64 --train-num-samples 8192 --
 
 
 
-## 📑 Citation
+## Citation
 
 If you find this work useful, please cite it as:
 
