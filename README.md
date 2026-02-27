@@ -49,8 +49,8 @@ If you find this work useful, please cite it as:
 
 ```bibtex
 @misc{brokttv2025vit,
-  title        = {Transformers-on-Majority:Mapping Theory to Reality Revealing new Mechanistic Features in Transformers Learnability},
-  author       = {Brokttv},
+  title        = {Transformers-on-Majority: Mapping Theory to Reality Revealing new Mechanistic Features in Transformers Learnability},
+  author       = {Adam Elimadi},
   year         = {2026},
   howpublished = {\url{https://github.com/Brokttv/Transformers-on-Majority}},
 }
