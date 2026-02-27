@@ -28,7 +28,7 @@ python main.py
 
 
 ```bash
-python main.py --task majority --epochs 50 --batch-size 128 --train-num-samples 16384 --train-seq-len 63 --test-num-samples 4096 --test-seq-len 63 --optim AdamW --lr 0.005 --data-seed 123 --device cuda
+python main.py --task majority --epochs 50 --batch-size 128 --train-num-samples 16384 --train-seq-len 63 --test-num-samples 4096 --test-seq-len 63 --optim AdamW --lr 0.005 --data_seed 123 --device cuda
 ```
 
 ### Example 2: Majority with Saturatd Transformer
@@ -37,7 +37,7 @@ python main.py --task majority --epochs 80 --batch-size 256 --train-num-samples 
 ```
 ### Example 3: OR-Task
 ```bash
-python main.py --task or --epochs 30 --batch-size 64 --train-num-samples 8192 --train-seq-len 127 --test-num-samples 2048 --test-seq-len 127 --optim AdamW --lr 0.003 --data-seed 999 --device mps
+python main.py --task or --epochs 30 --batch-size 64 --train-num-samples 8192 --train-seq-len 127 --test-num-samples 2048 --test-seq-len 127 --optim AdamW --lr 0.003 --data_seed 999 --device mps
 ```
 ---
 
