@@ -13,15 +13,14 @@ In this repo we aim to verify that emperically and aswer the follwing question p
 - `Softmax` and `Hard-max` (saturated transformer) are used both during inference to log accuracies for each
 
 ### Key Findings:
-**1)** Optimizer matters. Adam recovers MAJORITY reliably. SGD struggles and hits a ceiling.
+- **Optimizer determines recovery**. Adam with embedding dimension d = 1 achieves perfect generalization to sequences 27× training length. SGD fails regardless of capacity — even at d = 1024 it plateaus at ~95% and never fully generalizes.
 
-**2)** Embedding size matters for SGD but not Adam. Adam needs just 1 for most cases. SGD needs ~15 before it starts working at all
+- **Gradient descent never finds the theoretical solution**. Merrill et al.'s construction uses uniform attention (Δ = 0). Softmax training converges instead to a token-identity clustering solution (Δ ≈ 1.10) that is consistent across all seeds but categorically distinct from theory.
 
-**3)** Training length parity matters. Train on odd, recover reliably. Train on even, softmax acc plumets in half of training seeds
+- **Saturated training is unreliable**. Training with saturated attention — the regime used in Merrill et al.'s proofs — recovers a correct solution in only ~50% of runs. Softmax training succeeds in 10/10 runs with a consistent mechanism.
+Undefined inputs corrupt learning. Balanced sequences on which MAJORITY is undefined are the sole cause of generalization failure on even-length training data. Removing them restores full performance. Class imbalance has no independent effect. 
 
-**4)** A Softmax transformer reliably recovers the solution and achieves perfect accuracy under both Softmax and saturated inference
-
-**5)** A saturated transformer is highly seed-sensitive, recovering the solution in only ~50% of runs
+- A positive control on OR, a total function, confirms even-length training works when no inputs are undefined.
 
 ### Plots:
 Fig 1 illustrating both `1)` and `2)` claims:
